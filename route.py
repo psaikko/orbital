@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
 R = 6371.0
-DATAFILE = "generate4.txt"
+DATAFILE = "generate3.txt"
 
 
 def has_vision(sat1, sat2):
@@ -112,14 +112,14 @@ def visualize(vertices, distance_mat, path):
                 ax.plot(xs=[vertices[i][0], vertices[j][0]],
                         ys=[vertices[i][1], vertices[j][1]],
                         zs=[vertices[i][2], vertices[j][2]],
-                        color='w')
+                        color='#ff0000')
 
     path_pairs = zip(path[:-1], path[1:])
     for (i,j) in path_pairs:
         ax.plot(xs=[vertices[i][0], vertices[j][0]],
                 ys=[vertices[i][1], vertices[j][1]],
                 zs=[vertices[i][2], vertices[j][2]],
-                color='r')
+                color='#00ff00')
 
     u = linspace(0, 2 * pi, 100)
     v = linspace(0, pi, 100)
